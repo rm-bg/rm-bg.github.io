@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <script type="module" crossorigin src="https://cdn.jsdelivr.net/npm/@gradio/lite/dist/lite.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@gradio/lite/dist/lite.css" />
 </head>
 <body>
-<py-script>
-print("hello world!")
-</py-script>
+<gradio-lite theme="light">
+
+<gradio-file name="app.py" entrypoint>
+import gradio as gr
+
+
+async def classify(image):
+    return image
+
+demo = gr.Interface(
+    fn=classify,
+    inputs="image",
+    outputs="image",
+    allow_flagging="never",
+    css="footer {visibility: hidden}"
+)
+demo.launch()
+</gradio-file>
+
+</gradio-lite>
 </body>
 </html>
