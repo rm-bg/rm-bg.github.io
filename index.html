@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script type="module" crossorigin src="https://cdn.jsdelivr.net/npm/@gradio/lite/dist/lite.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@gradio/lite/dist/lite.css" />
+  <meta charset="UTF-8">
+  <title>Image Background Removal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css'>
+  <link rel='stylesheet' href='https://unpkg.com/filepond/dist/filepond.min.css'><link rel="stylesheet" href="./upload.css">
 </head>
 <body>
-<gradio-lite theme="light">
 
-<gradio-file name="app.py" entrypoint>
-import gradio as gr
+<!-- Image Upload -->
+<input type="file" class="filepond" name="filepond" data-max-file-size="3MB" />
 
+<!-- Plugins -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/onnxruntime-web/1.16.1/ort.min.js"></script>
+<script src='https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.min.js'></script>
+<script src='https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.min.js'></script>
+<script src='https://unpkg.com/filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.min.js'></script>
+<script src='https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.js'></script>
+<script src='https://unpkg.com/filepond/dist/filepond.min.js'></script><script  src="./upload.js"></script>
 
-async def classify(image):
-    return image
-
-demo = gr.Interface(
-    fn=classify,
-    inputs="image",
-    outputs="image",
-    allow_flagging="never",
-    css="footer {visibility: hidden}"
-)
-demo.launch()
-</gradio-file>
-
-</gradio-lite>
 </body>
+<!--
+Copyright (c) 2023 by Jinwoo Park (Curt) (https://codepen.io/Curt-Park/pen/ZEwWXzv)
+Fork of an original work FilePond Multiple File Upload (https://codepen.io/rikschennink/pen/WXavEx
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
 </html>
