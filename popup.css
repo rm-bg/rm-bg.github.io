@@ -41,6 +41,75 @@
     cursor: pointer;
 }
 
+.popup .download-btn {
+    --background: #2B3044;
+    --background-hover: #1E2235;
+    --text: #fff;
+    --icon: #fff;
+    --particle: #fff;
+    display: flex;
+    outline: none;
+    cursor: pointer;
+    border: 0;
+    width: 30%;
+    min-width: 113px;
+    padding: 8px 20px 8px 12px;
+    border-radius: 11px;
+    line-height: 24px;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text);
+    background: var(--b, var(--background));
+    transition: transform .3s, background .4s;
+    transform: scale(var(--scale, 1)) translateZ(0);
+    &:active {
+        --scale: .95;
+    }
+    .icon {
+        --arrow-y: 0;
+        --arrow-rotate: 135;
+        --arrow-top: 10px;
+        width: 24px;
+        height: 24px;
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 8px;
+        pointer-events: none;
+        .arrow,
+        .line {
+            position: absolute;
+            z-index: 1;
+        }
+        .arrow {
+            left: 11px;
+            top: 4px;
+            width: 2px;
+            height: 12px;
+            border-radius: 1px;
+            background: var(--icon);
+            transform: translateY(calc(var(--arrow-y) * 1px)) translateZ(0);
+            &:before,
+            &:after {
+                content: '';
+                width: 2px;
+                height: 7px;
+                position: absolute;
+                left: 0;
+                top: var(--arrow-top);
+                border-radius: 1px;
+                background: inherit;
+                transform-origin: 1px 1px;
+                transform: rotate(var(--r, calc(var(--arrow-rotate) * 1deg)));
+            }
+            &:after {
+                --r: calc(var(--arrow-rotate) * -1deg);
+            }
+        }
+    }
+}
+
 body.active-popup {
     overflow: hidden;
 }

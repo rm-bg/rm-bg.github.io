@@ -22,8 +22,14 @@
 <div class="popup">
     <button class="close-btn">&times;</button>
     <h2>Removed Background</h2>
-    <p>The image will be shown here with a download button</p>
     <img class="output-img" />
+    <button class="download-btn" >
+        <div class="icon">
+            <div class="arrow"></div>
+            <svg class="line" viewBox="0 0 24 24"></svg>
+        </div>
+        Download
+    </button>
 </div>
 
 <!-- Plugins -->
@@ -33,7 +39,9 @@
 <script src='https://unpkg.com/filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.min.js'></script>
 <script src='https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.js'></script>
 <script src='https://unpkg.com/filepond/dist/filepond.min.js'></script>
-<script  src="./upload.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js'></script>
+<script src="./upload.js"></script>
+<script src="./download.js"></script>
 
 </body>
 <!--
