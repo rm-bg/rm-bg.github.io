@@ -1,3 +1,6 @@
+/**
+ * Pop-up Box Styles
+ */
 .popup {
     position: absolute;
     top: -100%;
@@ -20,6 +23,10 @@
     margin: 15px 0px;
 }
 
+.popup .output-img {
+    width: 98%;
+}
+
 .popup .close-btn {
     position: absolute;
     top: -5px;
@@ -40,7 +47,6 @@ body.active-popup {
 
 body.active-popup .main {
     filter: blur(5px);
-    background: rgba(0, 0, 0, 0.08);
     transition: filter 0ms ease-in-out 0ms;
 }
 
