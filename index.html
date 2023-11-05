@@ -5,12 +5,23 @@
   <title>Image Background Removal</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel='stylesheet' href='https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css'>
-  <link rel='stylesheet' href='https://unpkg.com/filepond/dist/filepond.min.css'><link rel="stylesheet" href="./upload.css">
+  <link rel='stylesheet' href='https://unpkg.com/filepond/dist/filepond.min.css'>
+  <link rel="stylesheet" href="./upload.css">
+  <link rel="stylesheet" href="./popup.css">
 </head>
+
 <body>
 
 <!-- Image Upload -->
-<input type="file" class="filepond" name="filepond" data-max-file-size="3MB" />
+<div class="main">
+    <input type="file" class="filepond" name="filepond" data-max-file-size="3MB" />
+</div>
+
+<div class="popup">
+    <button class="close-btn">&times;</button>
+    <h2>This is popup title</h2>
+    <p>Some Description</p>
+</div>
 
 <!-- Plugins -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/onnxruntime-web/1.16.1/ort.min.js"></script>
@@ -18,7 +29,8 @@
 <script src='https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.min.js'></script>
 <script src='https://unpkg.com/filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.min.js'></script>
 <script src='https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.js'></script>
-<script src='https://unpkg.com/filepond/dist/filepond.min.js'></script><script  src="./upload.js"></script>
+<script src='https://unpkg.com/filepond/dist/filepond.min.js'></script>
+<script  src="./upload.js"></script>
 
 </body>
 <!--

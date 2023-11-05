@@ -14,9 +14,22 @@ FilePond.registerPlugin(
 
     // previews dropped images
     FilePondPluginImagePreview
+
 );
 
 // Select the file input and use create() to turn it into a pond
-FilePond.create(
-    document.querySelector('input')
-);
+const pond = FilePond.create(document.querySelector('input'));
+
+// Register an event for addfile
+pond.on('addfile', (error, file) => {
+    if (error) {
+        console.log('Error during the file upload')
+    }
+    // Activate the popup and show the result
+    document.body.classList.add("active-popup");
+});
+
+// Remove popup when close-btn is clicked
+document.querySelector(".popup .close-btn").addEventListener("click", function(){
+    document.body.classList.remove("active-popup");
+})
