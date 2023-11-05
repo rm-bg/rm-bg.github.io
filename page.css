@@ -1,0 +1,22 @@
+/**
+ * Page Styles
+ */
+html {
+    padding: 30vh 0 0;
+}
+
+body {
+    margin: auto;
+    padding: 0;
+    width: 50%;
+    min-width: 20em;
+}
+
+header h1 {
+    font-size: 2em;
+    font-weight: 600;
+    background-image: linear-gradient(to left, #edf0f4, #7f8a9a);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
