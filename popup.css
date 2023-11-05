@@ -46,9 +46,6 @@
     --background-hover: #1E2235;
     --text: #fff;
     --icon: #fff;
-    --particle: #fff;
-    display: flex;
-    outline: none;
     cursor: pointer;
     border: 0;
     width: 30%;
@@ -62,7 +59,6 @@
     color: var(--text);
     background: var(--b, var(--background));
     transition: transform .3s, background .4s;
-    transform: scale(var(--scale, 1)) translateZ(0);
     &:active {
         --scale: .95;
     }
